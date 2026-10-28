@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareFlow AI | Healthcare Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <span>✚</span> CareFlow AI
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="nav-btn">Get Started</button>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ✨ AI-Powered Healthcare Support
+                </div>
+
+                <h1>
+                    Smarter healthcare guidance,
+                    <span>one conversation</span> at a time.
+                </h1>
+
+                <p>
+                    CareFlow AI helps users understand health information,
+                    organize symptoms, and prepare for healthcare conversations
+                    using AI-powered assistance.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" onclick="startAssistant()">
+                        Start AI Assistant →
+                    </button>
+
+                    <button class="secondary-btn" onclick="scrollToFeatures()">
+                        Explore Features
+                    </button>
+                </div>
+
+                <div class="trust-info">
+                    <span>🔒 Privacy-focused</span>
+                    <span>🤖 AI-assisted</span>
+                    <span>💙 User-friendly</span>
+                </div>
+
+            </div>
+
+
+            <!-- Hero Card -->
+            <div class="hero-card">
+
+                <div class="card-header">
+                    <div class="status-dot"></div>
+                    <span>CareFlow AI Assistant</span>
+                    <span class="online">● Online</span>
+                </div>
+
+                <div class="chat-area">
+
+                    <div class="message ai-message">
+                        👋 Hello! I'm CareFlow AI.
+                        <br><br>
+                        How can I help you today?
+                    </div>
+
+                    <div class="quick-options">
+                        <button onclick="selectOption('Health Information')">
+                            🩺 Health Information
+                        </button>
+
+                        <button onclick="selectOption('Symptom Summary')">
+                            📝 Symptom Summary
+                        </button>
+
+                        <button onclick="selectOption('Healthcare FAQ')">
+                            📚 Healthcare FAQ
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="input-area">
+                    <input
+                        type="text"
+                        id="heroInput"
+                        placeholder="Ask a health-related question..."
+                    >
+
+                    <button onclick="sendQuestion()">➤</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features-section" id="features">
+
+            <div class="section-heading">
+                <span class="section-tag">CARE ASSISTANCE</span>
+                <h2>Powerful Features for Smarter Care</h2>
+                <p>
+                    CareFlow AI combines AI-assisted healthcare guidance with simple,
+                    user-friendly tools to make healthcare information easier to understand.
+                </p>
+            </div>
+        
+            <div class="features-grid">
+        
+                <!-- AI Health Assistant -->
+                <div class="feature-card" onclick="openFeaturePanel('assistant')">
+                    <div class="feature-icon">🩺</div>
+                    <h3>AI Health Assistant</h3>
+                    <p>
+                        Get guided, educational responses to common health concerns
+                        through an interactive conversation.
+                    </p>
+                    <span class="feature-link">Try Assistant →</span>
+                </div>
+        
+                <!-- Symptom Summary -->
+                <div class="feature-card" onclick="openFeaturePanel('summary')">
+                    <div class="feature-icon">📝</div>
+                    <h3>Symptom Summary</h3>
+                    <p>
+                        Organize symptoms into a simple structured summary that can
+                        help users communicate their concerns clearly.
+                    </p>
+                    <span class="feature-link">Create Summary →</span>
+                </div>
+        
+                <!-- Healthcare FAQ -->
+                <div class="feature-card" onclick="openFeaturePanel('faq')">
+                    <div class="feature-icon">📚</div>
+                    <h3>Healthcare FAQ</h3>
+                    <p>
+                        Quickly explore answers to common healthcare questions using
+                        an easy-to-navigate FAQ interface.
+                    </p>
+                    <span class="feature-link">Explore FAQ →</span>
+                </div>
+        
+                <!-- Appointment Request -->
+                <div class="feature-card" onclick="openFeaturePanel('appointment')">
+                    <div class="feature-icon">📅</div>
+                    <h3>Appointment Request</h3>
+                    <p>
+                        Prepare basic appointment information and organize a request
+                        before contacting a healthcare professional.
+                    </p>
+                    <span class="feature-link">Request Appointment →</span>
+                </div>
+        
+            </div>
+        </section>
+        
+        
+        <!-- Feature Modal -->
+        <div class="feature-modal" id="featureModal">
+        
+            <div class="feature-modal-content">
+        
+                <button class="modal-close" onclick="closeFeaturePanel()">×</button>
+        
+                <div id="featurePanelContent"></div>
+        
+            </div>
+        
+        </div>
+
+        <!-- ========================================
+     AI & PROMPT ENGINEERING SECTION
+======================================== -->
+
+<section class="ai-process-section" id="ai-process">
+
+    <div class="section-heading">
+
+        <span class="section-tag">AI DEVELOPMENT</span>
+
+        <h2>How AI Powers CareFlow</h2>
+
+        <p>
+            AI was used throughout the development process to design
+            healthcare conversations, refine prompts, structure responses,
+            and improve the overall user experience.
+        </p>
+
+    </div>
+
+
+    <div class="ai-process-grid">
+
+        <!-- Step 1 -->
+        <div class="ai-process-card">
+
+            <div class="process-number">01</div>
+
+            <div class="process-icon">💡</div>
+
+            <h3>Define the Goal</h3>
+
+            <p>
+                Identify the user's healthcare concern and design a
+                simple conversation flow that collects relevant information.
+            </p>
+
+        </div>
+
+
+        <!-- Step 2 -->
+        <div class="ai-process-card">
+
+            <div class="process-number">02</div>
+
+            <div class="process-icon">✍️</div>
+
+            <h3>Write the Prompt</h3>
+
+            <p>
+                Create structured prompts that guide the AI to provide
+                clear, supportive and safety-focused responses.
+            </p>
+
+        </div>
+
+
+        <!-- Step 3 -->
+        <div class="ai-process-card">
+
+            <div class="process-number">03</div>
+
+            <div class="process-icon">🔄</div>
+
+            <h3>Refine & Test</h3>
+
+            <p>
+                Review the generated responses, identify unclear or unsafe
+                behavior, and improve the prompt through multiple revisions.
+            </p>
+
+        </div>
+
+
+        <!-- Step 4 -->
+        <div class="ai-process-card">
+
+            <div class="process-number">04</div>
+
+            <div class="process-icon">🚀</div>
+
+            <h3>Final Outcome</h3>
+
+            <p>
+                Convert the refined AI behavior into an interactive
+                healthcare assistant prototype with a simple user experience.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Prompt Engineering Example -->
+
+    <div class="prompt-demo">
+
+        <div class="prompt-demo-header">
+
+            <span class="prompt-label">PROMPT ENGINEERING EXAMPLE</span>
+
+            <h3>From Basic Prompt to Better Healthcare Guidance</h3>
+
+        </div>
+
+
+        <div class="prompt-comparison">
+
+            <!-- Initial Prompt -->
+
+            <div class="prompt-box">
+
+                <span class="prompt-badge initial">
+                    INITIAL PROMPT
+                </span>
+
+                <p>
+                    "Help the user with their headache."
+                </p>
+
+                <small>
+                    Problem: Too broad and does not define the
+                    assistant's behavior or safety boundaries.
+                </small>
+
+            </div>
+
+
+            <div class="prompt-arrow">
+                →
+            </div>
+
+
+            <!-- Improved Prompt -->
+
+            <div class="prompt-box improved">
+
+                <span class="prompt-badge final">
+                    IMPROVED PROMPT
+                </span>
+
+                <p>
+                    "Act as a supportive healthcare information assistant.
+                    Ask concise follow-up questions about the user's
+                    symptoms, duration and severity. Provide general
+                    educational guidance, avoid diagnosis or prescription,
+                    and recommend professional or urgent medical care
+                    when appropriate."
+                </p>
+
+                <small>
+                    Improvement: Clear role, structured questioning,
+                    safety boundaries and escalation guidance.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- Safety Section -->
+        <section class="safety" id="about">
+
+            <div class="safety-icon">🛡️</div>
+
+            <div>
+                <h3>Important Safety Information</h3>
+
+                <p>
+                    CareFlow AI provides general educational information
+                    and is not a medical diagnosis or a replacement for
+                    professional medical advice. For urgent or serious
+                    symptoms, contact an appropriate healthcare professional
+                    or emergency service.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div>
+            <strong>✚ CareFlow AI</strong>
+            <p>AI-powered healthcare support.</p>
+        </div>
+
+        <p>© 2026 CareFlow AI. Educational prototype.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
